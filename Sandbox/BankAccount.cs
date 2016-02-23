@@ -18,7 +18,7 @@ namespace Sandbox
         {
             if (interestRate < 0.0 || interestRate > 20.0)
             {
-                throw new IllegalInterestRateException();
+                throw new IllegalInterestRateException("df");
             }
 
             this.interestRate = interestRate;
