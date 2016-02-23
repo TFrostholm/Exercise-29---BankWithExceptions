@@ -10,13 +10,24 @@ namespace Sandbox
 
             // Create a new bank account with 25 % interest rate
             // (is that legal...?)
-            BankAccount theAccount = new BankAccount(25.0);
 
+            BankAccount theAccount = new BankAccount(25.0);
+         
+
+            // Deposits 2000 to account
             theAccount.Deposit(2000);
 
 
-            // Should this be legal...?
-            theAccount.Deposit(-1000);
+            // Should this be legal...? 
+            try
+            {
+                theAccount.Deposit(-1000);
+            }
+            catch (NegativeAmountException)
+            {
+                Console.WriteLine("You can't deposit 0 or a negative number");
+            }
+            
 
             // Try to withdraw...
             try
